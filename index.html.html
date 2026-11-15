@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đào Viên Đại Náo - Gọi Mã Số 1-41</title>
+    <!-- Tải Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tải Google Fonts cổ trang & hiện đại -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        display: ['"Cinzel Decorative"', 'serif'],
+                    },
+                    colors: {
+                        imperial: {
+                            red: '#7f1d1d',
+                            darkRed: '#450a0a',
+                            crimson: '#b91c1c',
+                            gold: '#f59e0b',
+                            lightGold: '#fef08a',
+                            peach: '#fda4af',
+                            peachDark: '#e11d48',
+                            jade: '#065f46'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 4s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s infinite',
+                        'bounce-short': 'bounceShort 0.5s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(245, 158, 11, 0.4)' },
+                            '50%': { boxShadow: '0 0 30px rgba(245, 158, 11, 0.85)' },
+                        },
+                        bounceShort: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.08)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Họa tiết nền cung đình & mây lành */
+        body {
+            background-color: #2b0606;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(225, 29, 72, 0.22) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(245, 158, 11, 0.18) 0%, transparent 45%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f59e0b' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            color: #fef3c7;
+            overflow-x: hidden;
+        }
+
+        /* Khung viền cổ trang sang trọng */
+        .imperial-card {
+            background: linear-gradient(145deg, rgba(69, 10, 10, 0.92), rgba(43, 6, 6, 0.96));
+            border: 2px solid rgba(245, 158, 11, 0.55);
+            box-shadow: 
+                0 15px 35px -5px rgba(0, 0, 0, 0.7),
+                inset 0 0 20px rgba(245, 158, 11, 0.12);
+            position: relative;
+        }
+
+        /* Họa tiết góc khung */
+        .corner-ornament {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-color: #fbbf24;
+            pointer-events: none;
+        }
+        .corner-tl { top: 6px; left: 6px; border-top: 3px solid; border-left: 3px solid; border-top-left-radius: 6px; }
+        .corner-tr { top: 6px; right: 6px; border-top: 3px solid; border-right: 3px solid; border-top-right-radius: 6px; }
+        .corner-bl { bottom: 6px; left: 6px; border-bottom: 3px solid; border-left: 3px solid; border-bottom-left-radius: 6px; }
+        .corner-br { bottom: 6px; right: 6px; border-bottom: 3px solid; border-right: 3px solid; border-bottom-right-radius: 6px; }
+
+        /* Nút bấm vàng kim nổi bật */
+        .btn-gold {
+            background: linear-gradient(180deg, #fde047 0%, #f59e0b 50%, #d97706 100%);
+            color: #450a0a;
+            border: 2px solid #fef08a;
+            box-shadow: 0 6px 0 #92400e, 0 12px 20px rgba(0, 0, 0, 0.5);
+            transition: all 0.15s ease;
+        }
+        .btn-gold:hover:not(:disabled) {
+            filter: brightness(1.08);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 0 #92400e, 0 15px 25px rgba(245, 158, 11, 0.35);
+        }
+        .btn-gold:active:not(:disabled) {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #92400e, 0 5px 10px rgba(0, 0, 0, 0.4);
+        }
+        .btn-gold:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            filter: grayscale(0.6);
+        }
+
+        /* Hiệu ứng chữ vàng kim */
+        .text-gold-gradient {
+            background: linear-gradient(to bottom, #fef08a 15%, #f59e0b 65%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+        }
+
+        /* Thanh cuộn tinh tế */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #2b0606; }
+        ::-webkit-scrollbar-thumb { background: #92400e; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #f59e0b; }
+
+        /* Hiệu ứng hoa đào rơi nhẹ */
+        .petal {
+            position: fixed;
+            top: -20px;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.45;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); }
+            100% { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        /* ==========================================
+           HOẠT ẢNH SÂN KHẤU & 2 NHÂN VẬT SVG
+           ========================================== */
+        .stage-scene {
+            background: linear-gradient(180deg, #1e1b4b 0%, #4c1d95 35%, #be185d 72%, #f59e0b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .character-wrapper {
+            transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+            transform-origin: bottom center;
+        }
+        @keyframes charSneak {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            50% { transform: translateY(-5px) rotate(3deg); }
+        }
+        @keyframes charJump {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-18px) scale(1.04); }
+        }
+        @keyframes charPanic {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            25% { transform: translateX(-5px) rotate(-4deg); }
+            75% { transform: translateX(5px) rotate(4deg); }
+        }
+        @keyframes charCharge {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            40% { transform: translateX(12px) rotate(-8deg); }
+            70% { transform: translateX(-22px) rotate(12deg); }
+        }
+        @keyframes charFly {
+            0%, 100% { transform: translateY(-28px) rotate(-6deg); }
+            50% { transform: translateY(-38px) rotate(4deg); }
+        }
+        @keyframes treeShake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-2.5deg); }
+            75% { transform: rotate(2.5deg); }
+        }
+        @keyframes peachDrop {
+            0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+            85% { opacity: 1; }
+            100% { transform: translateY(155px) rotate(240deg); opacity: 0; }
+        }
+
+        .anim-sneak { animation: charSneak 1.4s ease-in-out infinite; }
+        .anim-jump { animation: charJump 0.65s ease-in-out infinite; }
+        .anim-panic { animation: charPanic 0.35s ease-in-out infinite; }
+        .anim-charge { animation: charCharge 0.7s ease-in-out infinite; }
+        .anim-fly { animation: charFly 1.6s ease-in-out infinite; }
+        .anim-tree-shake { animation: treeShake 0.25s ease-in-out infinite; transform-origin: bottom center; }
+        .falling-peach { animation: peachDrop 1.2s ease-in infinite; }
+
+        /* ==========================================
+           HIỆU ỨNG QUÝNH NHAU & ĐĨA LẮC XÚC XẮC 3D
+           ========================================== */
+        @keyframes wukongBrawl {
+            0%, 100% { transform: translateX(0) rotate(0deg) scale(1); }
+            20% { transform: translateX(65px) translateY(-18px) rotate(18deg) scale(1.08); }
+            40% { transform: translateX(48px) translateY(4px) rotate(-14deg) scale(1.05); }
+            60% { transform: translateX(72px) translateY(-24px) rotate(24deg) scale(1.1); }
+            80% { transform: translateX(35px) translateY(-5px) rotate(-10deg) scale(1.03); }
+        }
+        @keyframes bajieBrawl {
+            0%, 100% { transform: translateX(0) rotate(0deg) scale(1); }
+            20% { transform: translateX(-65px) translateY(-12px) rotate(-18deg) scale(1.08); }
+            40% { transform: translateX(-45px) translateY(6px) rotate(15deg) scale(1.05); }
+            60% { transform: translateX(-72px) translateY(-20px) rotate(-22deg) scale(1.1); }
+            80% { transform: translateX(-35px) translateY(-4px) rotate(12deg) scale(1.03); }
+        }
+        @keyframes staffSwing {
+            0%, 100% { transform: rotate(-18deg); }
+            50% { transform: rotate(55deg); }
+        }
+        @keyframes rakeSwing {
+            0%, 100% { transform: rotate(14deg); }
+            50% { transform: rotate(-55deg); }
+        }
+        @keyframes cloudSpin {
+            0% { transform: translate(-50%, -50%) scale(0.92) rotate(0deg); }
+            50% { transform: translate(-50%, -50%) scale(1.12) rotate(180deg); }
+            100% { transform: translate(-50%, -50%) scale(0.92) rotate(360deg); }
+        }
+        @keyframes comicPop {
+            0% { transform: translate(-50%, 0) scale(0.3) rotate(-15deg); opacity: 0; }
+            35% { transform: translate(-50%, -28px) scale(1.25) rotate(8deg); opacity: 1; }
+            75% { transform: translate(-50%, -45px) scale(1) rotate(-5deg); opacity: 1; }
+            100% { transform: translate(-50%, -62px) scale(0.8) rotate(0deg); opacity: 0; }
+        }
+        @keyframes bowlShake {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            15% { transform: translate(-10px, -8px) rotate(-8deg); }
+            30% { transform: translate(11px, -4px) rotate(9deg); }
+            45% { transform: translate(-9px, -11px) rotate(-6deg); }
+            60% { transform: translate(10px, -6px) rotate(7deg); }
+            75% { transform: translate(-7px, -9px) rotate(-9deg); }
+            90% { transform: translate(8px, -3px) rotate(5deg); }
+        }
+        @keyframes diceTumble {
+            0% { transform: rotate(0deg) scale(0.6) translateY(-14px); }
+            50% { transform: rotate(200deg) scale(1.15) translateY(4px); }
+            100% { transform: rotate(360deg) scale(1) translateY(0); }
+        }
+
+        .anim-wukong-brawl { animation: wukongBrawl 0.42s ease-in-out infinite; z-index: 25 !important; }
+        .anim-bajie-brawl { animation: bajieBrawl 0.42s ease-in-out infinite; z-index: 25 !important; }
+        .anim-staff-swing { animation: staffSwing 0.25s ease-in-out infinite; transform-origin: 35px 120px; }
+        .anim-rake-swing { animation: rakeSwing 0.25s ease-in-out infinite; transform-origin: 145px 110px; }
+        .anim-cloud-spin { animation: cloudSpin 1.1s linear infinite; }
+        .comic-onomatopoeia {
+            position: absolute;
+            pointer-events: none;
+            animation: comicPop 0.65s ease-out forwards;
+            text-shadow: 2px 2px 0 #450a0a, -1px -1px 0 #450a0a, 0 4px 10px rgba(0,0,0,0.7);
+        }
+
+        /* Đĩa sứ Thiên Đình & Nắp bát úp */
+        .porcelain-plate {
+            background: radial-gradient(circle at 50% 45%, #fffbeb 0%, #fef3c7 52%, #f59e0b 78%, #92400e 100%);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.75), inset 0 2px 8px rgba(255, 255, 255, 0.9);
+        }
+        .porcelain-bowl-lid {
+            background: radial-gradient(circle at 35% 28%, #ef4444 0%, #b91c1c 48%, #7f1d1d 85%, #450a0a 100%);
+            box-shadow: 0 14px 24px rgba(0, 0, 0, 0.7), inset 0 4px 12px rgba(254, 240, 138, 0.45);
+            transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+        }
+        .bowl-lid-open {
+            transform: translateY(-115px) scale(0.72) rotate(-14deg);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .bowl-lid-closed {
+            transform: translateY(0) scale(1) rotate(0deg);
+            opacity: 1;
+        }
+        .bowl-shaking {
+            animation: bowlShake 0.22s linear infinite !important;
+        }
+        .dice-3d {
+            background: linear-gradient(145deg, #ffffff 0%, #f3f4f6 65%, #d1d5db 100%);
+            box-shadow: 0 4px 0 #9ca3af, 0 6px 10px rgba(0,0,0,0.45), inset 0 1px 2px #fff;
+            border: 1.5px solid #e5e7eb;
+        }
+        .dice-pop {
+            animation: diceTumble 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Bong bóng lời thoại */
+        .speech-bubble {
+            position: relative;
+            background: #fffbeb;
+            color: #450a0a;
+            border: 2px solid #f59e0b;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.45);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -9px;
+            width: 14px;
+            height: 14px;
+            background: #fffbeb;
+            border-right: 2px solid #f59e0b;
+            border-bottom: 2px solid #f59e0b;
+            transform: rotate(45deg);
+        }
+        .bubble-left::after { left: 26px; }
+        .bubble-right::after { right: 26px; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-red-950">
+
+    <!-- Container hiệu ứng cánh đào rơi nền -->
+    <div id="petals-container" aria-hidden="true"></div>
+
+    <!-- HEADER THIÊN ĐÌNH -->
+    <header class="relative z-10 pt-5 pb-3 px-4 border-b border-amber-500/30 bg-gradient-to-b from-red-950/90 to-transparent">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <!-- Tiêu đề chính -->
+            <div class="flex items-center gap-3 text-center md:text-left">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-pink-400 to-rose-600 border-2 border-amber-300 flex items-center justify-center text-2xl sm:text-3xl shadow-lg animate-float shrink-0">
+                    🍑
+                </div>
+                <div>
+                    <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold tracking-wider uppercase mb-1">
+                        <span>☁️ Thiên Đình Ký Sự</span>
+                        <span>•</span>
+                        <span>41 Mật Mã</span>
+                    </div>
+                    <h1 class="font-serif text-2xl sm:text-3xl md:text-4xl font-black text-gold-gradient tracking-tight">
+                        ĐÀO VIÊN ĐẠI NÁO
+                    </h1>
+                    <p class="text-xs sm:text-sm text-amber-200/80 font-medium">
+                        Tôn Ngộ Không hái trộm đào tiên bị Trư Bát Giới bắt quả tang 🐒🐷
+                    </p>
+                </div>
+            </div>
+
+            <!-- Thanh công cụ điều khiển (Âm thanh, Thống kê, Reset) -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+                <!-- Bộ đếm số lượng -->
+                <div class="flex items-center gap-3 px-3.5 py-2 rounded-xl bg-red-950/80 border border-amber-500/40 text-xs sm:text-sm">
+                    <div class="text-center">
+                        <span class="text-amber-300/70 block text-[10px] uppercase font-bold">Đã gọi</span>
+                        <span id="stat-called" class="font-extrabold text-amber-400 text-base">0</span><span class="text-amber-200/50">/41</span>
+                    </div>
+                    <div class="h-6 w-[1px] bg-amber-500/30"></div>
+                    <div class="text-center">
+                        <span class="text-amber-300/70 block text-[10px] uppercase font-bold">Còn lại</span>
+                        <span id="stat-remaining" class="font-extrabold text-pink-400 text-base">41</span>
+                    </div>
+                </div>
+
+                <!-- Nút Bật/Tắt Âm thanh -->
+                <button id="btn-sound" onclick="toggleSound()" title="Bật / Tắt âm thanh hiệu ứng" class="p-2.5 sm:px-3.5 sm:py-2.5 rounded-xl bg-red-900/80 hover:bg-red-800 border border-amber-400/50 text-amber-200 flex items-center gap-2 transition active:scale-95">
+                    <span id="sound-icon" class="text-lg">🔊</span>
+                    <span id="sound-text" class="text-xs sm:text-sm font-bold hidden sm:inline">Âm thanh: BẬT</span>
+                </button>
+
+                <!-- Nút Chơi lại từ đầu (Reset) -->
+                <button onclick="openResetModal()" title="Làm mới toàn bộ 41 mã số" class="p-2.5 sm:px-3.5 sm:py-2.5 rounded-xl bg-rose-950/90 hover:bg-rose-900 border border-rose-400/50 text-rose-200 flex items-center gap-1.5 transition active:scale-95">
+                    <span class="text-lg">🔄</span>
+                    <span class="text-xs sm:text-sm font-bold">Chơi lại</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <main class="relative z-10 flex-grow max-w-6xl w-full mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- CỘT TRÁI (7 CỘT): SÂN KHẤU QUAY SỐ & HIỂN THỊ SỰ KIỆN -->
+        <section class="lg:col-span-7 flex flex-col gap-5">
+            
+            <!-- Thẻ hiển thị kết quả chính -->
+            <div id="stage-card" class="imperial-card rounded-3xl p-4 sm:p-6 flex flex-col items-center text-center transition-all duration-300">
+                <!-- Họa tiết 4 góc -->
+                <div class="corner-ornament corner-tl"></div>
+                <div class="corner-ornament corner-tr"></div>
+                <div class="corner-ornament corner-bl"></div>
+                <div class="corner-ornament corner-br"></div>
+
+                <!-- Nhãn trạng thái phía trên -->
+                <div id="status-badge" class="mb-3 inline-flex items-center gap-2 px-4 py-1 rounded-full bg-amber-500/15 border border-amber-400/40 text-amber-300 text-xs sm:text-sm font-bold tracking-wide">
+                    <span>✨ Sẵn sàng đột nhập Vườn Đào Tiên</span>
+                </div>
+
+                <!-- KHUNG CẢNH SÂN KHẤU MINH HỌA VƯỜN ĐÀO TIÊN & 2 NHÂN VẬT SVG -->
+                <div id="visual-stage" class="stage-scene w-full h-[270px] sm:h-[310px] rounded-2xl border-2 border-amber-400/60 shadow-[inset_0_0_30px_rgba(0,0,0,0.65)] mb-4 select-none">
+                    
+                    <!-- Nền SVG Thiên Đình: Mây ngũ sắc, Cổng Nam Thiên Môn, Cây Đào Tiên -->
+                    <svg viewBox="0 0 800 320" preserveAspectRatio="xMidYMax slice" class="w-full h-full block">
+                        <defs>
+                            <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#fef08a" stop-opacity="0.95"/>
+                                <stop offset="50%" stop-color="#fde047" stop-opacity="0.35"/>
+                                <stop offset="100%" stop-color="#fde047" stop-opacity="0"/>
+                            </radialGradient>
+                            <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#065f46"/>
+                                <stop offset="100%" stop-color="#022c22"/>
+                            </linearGradient>
+                            <radialGradient id="peachGrad" cx="35%" cy="30%" r="70%">
+                                <stop offset="0%" stop-color="#fff1f2"/>
+                                <stop offset="45%" stop-color="#fb7185"/>
+                                <stop offset="100%" stop-color="#be123c"/>
+                            </radialGradient>
+                        </defs>
+
+                        <!-- Trăng rằm Thiên Đình -->
+                        <circle cx="400" cy="85" r="78" fill="url(#moonGlow)"/>
+                        <circle cx="400" cy="85" r="34" fill="#fef9c3" opacity="0.9"/>
+
+                        <!-- Cổng Nam Thiên Môn xa xa -->
+                        <g opacity="0.45" transform="translate(325, 48)">
+                            <rect x="20" y="45" width="12" height="75" fill="#991b1b"/>
+                            <rect x="118" y="45" width="12" height="75" fill="#991b1b"/>
+                            <path d="M5 48 Q75 28 145 48 L135 58 Q75 42 15 58 Z" fill="#f59e0b"/>
+                            <path d="M22 30 Q75 14 128 30 L120 38 Q75 25 30 38 Z" fill="#dc2626"/>
+                            <rect x="52" y="46" width="46" height="16" rx="3" fill="#450a0a" stroke="#fbbf24" stroke-width="1.5"/>
+                        </g>
+
+                        <!-- Mây ngũ sắc trôi -->
+                        <g fill="#fdf2f8" opacity="0.28">
+                            <path d="M40 75 Q60 55 85 70 Q110 52 135 72 Q155 75 145 90 L35 90 Z"/>
+                            <path d="M620 65 Q645 45 675 62 Q705 45 730 68 Q750 72 740 86 L615 86 Z"/>
+                        </g>
+
+                        <!-- Cây Đào Tiên Cổ Thụ ở trung tâm -->
+                        <g id="svg-peach-tree">
+                            <!-- Thân cây uốn lượn -->
+                            <path d="M375 275 Q388 210 368 155 Q350 115 310 95 M385 275 Q405 215 435 165 Q460 125 505 105 M392 275 L395 145" 
+                                  stroke="#451a03" stroke-width="24" stroke-linecap="round" fill="none"/>
+                            <path d="M375 275 Q388 210 368 155 Q350 115 310 95 M385 275 Q405 215 435 165 Q460 125 505 105" 
+                                  stroke="#78350f" stroke-width="10" stroke-linecap="round" fill="none"/>
+                            <!-- Tán lá hồng phấn rực rỡ -->
+                            <circle cx="315" cy="105" r="58" fill="#be185d"/>
+                            <circle cx="485" cy="108" r="60" fill="#be185d"/>
+                            <circle cx="400" cy="82" r="72" fill="#db2777"/>
+                            <circle cx="345" cy="92" r="52" fill="#f472b6"/>
+                            <circle cx="455" cy="95" r="54" fill="#f472b6"/>
+                            <circle cx="400" cy="68" r="56" fill="#fbcfe8" opacity="0.85"/>
+
+                            <!-- Những trái đào tiên căng mọng trên cây -->
+                            <g id="tree-peaches">
+                                <path d="M310 95 C298 95 294 112 310 122 C326 112 322 95 310 95 Z" fill="url(#peachGrad)"/>
+                                <path d="M365 72 C353 72 349 89 365 99 C381 89 377 72 365 72 Z" fill="url(#peachGrad)"/>
+                                <path d="M430 68 C418 68 414 85 430 95 C446 85 442 68 430 68 Z" fill="url(#peachGrad)"/>
+                                <path d="M485 98 C473 98 469 115 485 125 C501 115 497 98 485 98 Z" fill="url(#peachGrad)"/>
+                                <path d="M402 105 C390 105 386 122 402 132 C418 122 414 105 402 105 Z" fill="url(#peachGrad)"/>
+                            </g>
+                        </g>
+
+                        <!-- Hiệu ứng Mưa Đào Rơi (ẩn mặc định, bật khi Bát Giới húc cây) -->
+                        <g id="peach-rain-group" class="hidden">
+                            <path class="falling-peach" style="animation-delay: 0s;" d="M310 110 C300 110 297 124 310 132 C323 124 320 110 310 110 Z" fill="url(#peachGrad)"/>
+                            <path class="falling-peach" style="animation-delay: 0.35s;" d="M480 115 C470 115 467 129 480 137 C493 129 490 115 480 115 Z" fill="url(#peachGrad)"/>
+                            <path class="falling-peach" style="animation-delay: 0.7s;" d="M540 105 C530 105 527 119 540 127 C553 119 550 105 540 105 Z" fill="url(#peachGrad)"/>
+                            <path class="falling-peach" style="animation-delay: 0.2s;" d="M250 108 C240 108 237 122 250 130 C263 122 260 108 250 108 Z" fill="url(#peachGrad)"/>
+                        </g>
+
+                        <!-- Mặt cỏ Vườn Đào Tiên -->
+                        <path d="M0 265 Q200 250 400 262 Q600 274 800 258 L800 320 L0 320 Z" fill="url(#groundGrad)"/>
+                        <!-- Bụi cây lùm cỏ 2 bên -->
+                        <ellipse cx="65" cy="272" rx="68" ry="26" fill="#047857"/>
+                        <ellipse cx="735" cy="272" rx="72" ry="28" fill="#047857"/>
+                    </svg>
+
+                    <!-- BÓNG ĐƯỜNG TĂNG (Chỉ hiện ở cảnh cuối 40-41) -->
+                    <div id="master-tang-silhouette" class="hidden absolute top-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center animate-bounce">
+                        <div class="px-2.5 py-0.5 rounded-full bg-amber-300 text-red-950 text-[10px] font-black shadow mb-1">
+                            🧘 Sư Phụ Đường Tăng xuất hiện!
+                        </div>
+                        <span class="text-4xl drop-shadow-[0_0_12px_rgba(253,224,71,0.9)]">🧘‍♂️</span>
+                    </div>
+
+                    <!-- BONG BÓNG THOẠI CỦA TÔN NGỘ KHÔNG (BÊN TRÁI) -->
+                    <div id="wukong-bubble" class="speech-bubble bubble-left absolute top-3 left-3 sm:left-5 max-w-[44%] sm:max-w-[230px] px-3 py-2 rounded-2xl text-left z-20">
+                        <span class="block text-[10px] font-black uppercase text-amber-700 tracking-wider">🐒 Đại Thánh:</span>
+                        <p id="wukong-quote" class="text-xs sm:text-sm font-bold leading-snug text-red-950">
+                            "Đêm nay đào tiên vườn này là của lão Tôn!"
+                        </p>
+                    </div>
+
+                    <!-- BONG BÓNG THOẠI CỦA TRƯ BÁT GIỚI (BÊN PHẢI) -->
+                    <div id="bajie-bubble" class="speech-bubble bubble-right absolute top-3 right-3 sm:right-5 max-w-[44%] sm:max-w-[230px] px-3 py-2 rounded-2xl text-left z-20">
+                        <span class="block text-[10px] font-black uppercase text-pink-700 tracking-wider">🐷 Bát Giới:</span>
+                        <p id="bajie-quote" class="text-xs sm:text-sm font-bold leading-snug text-red-950">
+                            "Hộc hộc... Hình như có mùi đào chín đâu đây!"
+                        </p>
+                    </div>
+
+                    <!-- NHÂN VẬT 1: TÔN NGỘ KHÔNG (SVG BIỂU CẢM BÊN TRÁI) -->
+                    <div id="wukong-actor" class="character-wrapper anim-sneak absolute bottom-3 left-[10%] sm:left-[16%] w-28 sm:w-36 h-36 sm:h-44 z-20">
+                        <svg viewBox="0 0 160 200" class="w-full h-full overflow-visible drop-shadow-[0_8px_10px_rgba(0,0,0,0.65)]">
+                            <!-- Đuôi khỉ uốn cong -->
+                            <path d="M48 145 Q12 135 18 100 Q22 80 36 88" stroke="#b45309" stroke-width="8" stroke-linecap="round" fill="none"/>
+                            <!-- Gậy Như Ý (vàng đỏ) -->
+                            <g id="wukong-staff" transform="rotate(-18 35 120)">
+                                <rect x="28" y="25" width="8" height="155" rx="3" fill="#dc2626"/>
+                                <rect x="27" y="22" width="10" height="22" rx="2" fill="#fbbf24"/>
+                                <rect x="27" y="160" width="10" height="22" rx="2" fill="#fbbf24"/>
+                            </g>
+                            <!-- Khăn choàng đỏ bay -->
+                            <path d="M55 98 Q22 105 15 128 Q42 126 62 112 Z" fill="#dc2626"/>
+                            <!-- Chân & Giày -->
+                            <rect x="60" y="152" width="14" height="32" rx="6" fill="#92400e"/>
+                            <rect x="86" y="152" width="14" height="32" rx="6" fill="#92400e"/>
+                            <path d="M54 180 L76 180 L76 190 L50 190 Z" fill="#1f2937"/>
+                            <path d="M84 180 L106 180 L110 190 L84 190 Z" fill="#1f2937"/>
+                            <!-- Thân áo giáp vàng & váy da hổ -->
+                            <rect x="54" y="96" width="52" height="44" rx="14" fill="#f59e0b" stroke="#fef08a" stroke-width="2"/>
+                            <path d="M52 134 L108 134 L112 158 L48 158 Z" fill="#fbbf24"/>
+                            <!-- Đốm da hổ -->
+                            <circle cx="65" cy="145" r="4" fill="#451a03"/>
+                            <circle cx="82" cy="148" r="4.5" fill="#451a03"/>
+                            <circle cx="96" cy="143" r="3.5" fill="#451a03"/>
+                            <!-- Đầu & Lông mặt khỉ -->
+                            <circle cx="80" cy="64" r="32" fill="#b45309"/>
+                            <!-- Tai khỉ -->
+                            <circle cx="46" cy="64" r="10" fill="#fde68a" stroke="#b45309" stroke-width="3"/>
+                            <circle cx="114" cy="64" r="10" fill="#fde68a" stroke="#b45309" stroke-width="3"/>
+                            <!-- Vùng da mặt hình trái tim -->
+                            <path d="M80 46 C64 40 54 54 58 72 C62 86 98 86 102 72 C106 54 96 40 80 46 Z" fill="#fef3c7"/>
+                            <!-- Vòng Kim Cô vàng sáng -->
+                            <path d="M50 46 Q80 36 110 46" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" fill="none"/>
+                            <circle cx="80" cy="41" r="5" fill="#fef08a" stroke="#d97706" stroke-width="1.5"/>
+                            <!-- Mắt Hỏa Nhãn Kim Tinh -->
+                            <g id="wukong-eyes">
+                                <ellipse cx="69" cy="62" rx="6" ry="7" fill="#fff"/>
+                                <circle cx="71" cy="62" r="3.5" fill="#dc2626"/>
+                                <ellipse cx="91" cy="62" rx="6" ry="7" fill="#fff"/>
+                                <circle cx="93" cy="62" r="3.5" fill="#dc2626"/>
+                            </g>
+                            <!-- Miệng biểu cảm (thay đổi bằng JS) -->
+                            <path id="wukong-mouth" d="M70 76 Q80 84 90 76" stroke="#78350f" stroke-width="3" stroke-linecap="round" fill="none"/>
+                            <!-- Tay phải cầm Quả Đào Tiên to đùng -->
+                            <g id="wukong-peach-hand" transform="translate(102, 102)">
+                                <circle cx="8" cy="14" r="9" fill="#fde68a"/>
+                                <path d="M18 -4 C4 -4 0 16 18 28 C36 16 32 -4 18 -4 Z" fill="url(#peachGrad)" stroke="#fff1f2" stroke-width="1"/>
+                                <path d="M18 -4 Q26 -14 32 -6 Q24 0 18 -4 Z" fill="#10b981"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- NHÂN VẬT 2: TRƯ BÁT GIỚI (SVG BIỂU CẢM BÊN PHẢI) -->
+                    <div id="bajie-actor" class="character-wrapper anim-sneak absolute bottom-3 right-[10%] sm:right-[16%] w-32 sm:w-40 h-36 sm:h-44 z-20">
+                        <svg viewBox="0 0 180 200" class="w-full h-full overflow-visible drop-shadow-[0_8px_10px_rgba(0,0,0,0.65)]">
+                            <!-- Đinh ba Cửu Xỉ 9 răng -->
+                            <g id="bajie-rake" transform="rotate(14 145 110)">
+                                <rect x="142" y="32" width="7" height="150" rx="3" fill="#78350f"/>
+                                <path d="M126 34 L165 34 L165 20 M133 34 L133 20 M141 34 L141 20 M149 34 L149 20 M157 34 L157 20" 
+                                      stroke="#cbd5e1" stroke-width="4" stroke-linecap="round" fill="none"/>
+                            </g>
+                            <!-- Chân to -->
+                            <rect x="64" y="154" width="18" height="30" rx="7" fill="#1e293b"/>
+                            <rect x="98" y="154" width="18" height="30" rx="7" fill="#1e293b"/>
+                            <ellipse cx="70" cy="186" rx="14" ry="6" fill="#0f172a"/>
+                            <ellipse cx="110" cy="186" rx="14" ry="6" fill="#0f172a"/>
+                            <!-- Thân hình mũm mĩm áo đen cổ trang -->
+                            <ellipse cx="90" cy="128" rx="44" ry="38" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+                            <!-- Bụng bự thắt đai vàng -->
+                            <path d="M48 128 Q90 142 132 128" stroke="#f59e0b" stroke-width="8" fill="none"/>
+                            <circle cx="90" cy="135" r="7" fill="#fbbf24"/>
+                            <!-- Tai lợn to vểnh 2 bên -->
+                            <path d="M56 54 Q26 42 32 76 Q46 84 58 72 Z" fill="#fbcfe8" stroke="#f472b6" stroke-width="2"/>
+                            <path d="M124 54 Q154 42 148 76 Q134 84 122 72 Z" fill="#fbcfe8" stroke="#f472b6" stroke-width="2"/>
+                            <!-- Đầu hồng hào -->
+                            <circle cx="90" cy="64" r="34" fill="#fbcfe8" stroke="#f472b6" stroke-width="2"/>
+                            <!-- Mũ quan viên đen -->
+                            <path d="M62 40 Q90 22 118 40 L114 48 Q90 38 66 48 Z" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+                            <!-- Mắt Bát Giới -->
+                            <g id="bajie-eyes">
+                                <circle cx="76" cy="56" r="6" fill="#fff"/>
+                                <circle cx="75" cy="56" r="3" fill="#0f172a"/>
+                                <circle cx="104" cy="56" r="6" fill="#fff"/>
+                                <circle cx="103" cy="56" r="3" fill="#0f172a"/>
+                            </g>
+                            <!-- Mũi lợn hếch đặc trưng -->
+                            <ellipse cx="90" cy="70" rx="14" ry="10" fill="#f472b6" stroke="#db2777" stroke-width="1.5"/>
+                            <circle cx="85" cy="70" r="2.8" fill="#831843"/>
+                            <circle cx="95" cy="70" r="2.8" fill="#831843"/>
+                            <!-- Miệng & Nước dãi (thay đổi bằng JS) -->
+                            <path id="bajie-mouth" d="M80 85 Q90 92 100 85" stroke="#9d174d" stroke-width="3" stroke-linecap="round" fill="none"/>
+                            <path id="bajie-drool" class="hidden" d="M98 86 Q102 98 99 108" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                            <!-- Cục u trên đầu (hiện khi bị đào rơi trúng hoặc bị gõ) -->
+                            <circle id="bajie-bump" class="hidden" cx="90" cy="27" r="9" fill="#fb7185" stroke="#e11d48" stroke-width="2"/>
+                            <!-- Tay trái chỉ thẳng về phía Ngộ Không -->
+                            <g id="bajie-point-hand">
+                                <ellipse cx="42" cy="112" rx="14" ry="9" fill="#fbcfe8" stroke="#f472b6" stroke-width="1.5"/>
+                                <rect x="24" y="108" width="14" height="6" rx="3" fill="#fbcfe8"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- ĐÁM MÂY KHÓI BỤI CHIẾN ĐẤU & TIA CHỚP KHI 2 NHÂN VẬT QUÝNH NHAU -->
+                    <div id="brawl-cloud-fx" class="hidden absolute top-[54%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
+                        <div class="anim-cloud-spin w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center">
+                            <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-[0_0_18px_rgba(253,224,71,0.9)]">
+                                <!-- Mây khói bụi cuộn tròn -->
+                                <path d="M60 65 Q45 35 80 35 Q105 15 130 38 Q165 35 160 70 Q188 95 165 125 Q172 162 135 158 Q105 182 78 158 Q40 165 45 128 Q18 100 60 65 Z" 
+                                      fill="#fef3c7" fill-opacity="0.88" stroke="#f59e0b" stroke-width="4"/>
+                                <!-- Tia chớp va chạm chữ thập -->
+                                <polygon points="100,22 114,76 168,62 126,102 164,145 108,124 92,178 82,122 28,136 72,96 36,54 88,76" 
+                                         fill="#fde047" stroke="#dc2626" stroke-width="3"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- LỚP HIỂN THỊ CHỮ TRUYỆN TRANH ("BỐP!", "CHOANG!", "CHÁT!") -->
+                    <div id="comic-fx-layer" class="absolute inset-0 z-30 pointer-events-none overflow-hidden"></div>
+                </div>
+
+                <!-- KHU VỰC ĐĨA LẮC XÚC XẮC THIÊN ĐÌNH (BÁT ÚP ĐĨA + XÚC XẮC 3D + MÃ SỐ) -->
+                <div class="w-full flex flex-col items-center justify-center my-1">
+                    <div id="dice-dish-stage" class="relative w-64 sm:w-72 h-36 sm:h-40 flex items-center justify-center select-none">
+                        
+                        <!-- ĐĨA SỨ THIÊN ĐÌNH (NỀN DƯỚI) -->
+                        <div class="porcelain-plate w-60 sm:w-68 h-28 sm:h-32 rounded-[50%] border-4 border-amber-400 flex flex-col items-center justify-center relative">
+                            <!-- Vành hoa văn trong lòng đĩa -->
+                            <div class="w-[86%] h-[82%] rounded-[50%] border-2 border-dashed border-red-700/45 flex flex-col items-center justify-center bg-amber-50/75 px-3">
+                                
+                                <!-- 3 VIÊN XÚC XẮC 3D NẢY TRÊN ĐĨA -->
+                                <div id="dice-trio" class="flex items-center justify-center gap-2 mb-1">
+                                    <div id="die-1" class="dice-3d w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center text-red-600 font-black text-sm">
+                                        ●
+                                    </div>
+                                    <div id="die-2" class="dice-3d w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center text-slate-900 font-black text-xs leading-none">
+                                        ● ●
+                                    </div>
+                                    <div id="die-3" class="dice-3d w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center text-red-600 font-black text-xs leading-none">
+                                        ●●●
+                                    </div>
+                                </div>
+
+                                <!-- MÃ SỐ PHÁT SÁNG Ở TRUNG TÂM ĐĨA -->
+                                <div id="number-circle" class="flex items-center gap-1.5 px-3.5 py-0.5 rounded-full bg-red-950 border border-amber-400 shadow-md">
+                                    <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-amber-300 font-bold">SỐ</span>
+                                    <span id="display-number" class="font-serif text-2xl sm:text-3xl font-black text-gold-gradient leading-none">
+                                        ??
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NẮP BÁT SỨ ÚP ĐĨA (ĐẬY KÍN VÀ RUNG LẮC KHI QUAY SỐ) -->
+                        <div id="bowl-lid" class="porcelain-bowl-lid bowl-lid-open absolute top-1 sm:top-2 w-52 sm:w-58 h-26 sm:h-28 rounded-t-[999px] rounded-b-[28px] border-2 border-amber-300 flex flex-col items-center justify-center z-20">
+                            <!-- Núm cầm vàng trên đỉnh bát -->
+                            <div class="w-9 h-3.5 -mt-4 mb-1 rounded-full bg-gradient-to-b from-yellow-200 to-amber-500 border border-amber-700 shadow"></div>
+                            <span class="font-serif text-xs sm:text-sm font-black tracking-widest text-amber-200 uppercase drop-shadow">
+                                🍑 Bát Bảo Đào Viên
+                            </span>
+                            <span class="text-[10px] text-amber-300/85 font-semibold mt-0.5">
+                                Đang xóc xí ngầu...
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tên sự kiện (Code Name) -->
+                <div class="w-full">
+                    <h2 id="display-title" class="font-serif text-xl sm:text-2xl md:text-3xl font-extrabold text-amber-300 tracking-wide min-h-[2rem] flex items-center justify-center">
+                        Bấm nút bên dưới để gọi số!
+                    </h2>
+                </div>
+
+                <!-- Khung Lời dẫn / Diễn biến câu chuyện -->
+                <div class="mt-3 w-full bg-black/35 border border-amber-500/30 rounded-2xl p-3.5 sm:p-4 min-h-[90px] flex flex-col items-center justify-center relative">
+                    <div id="story-icons" class="flex items-center justify-center gap-2 text-lg sm:text-xl mb-1.5">
+                        <span>🐒</span><span>🍑</span><span>🐷</span><span>🥢</span>
+                    </div>
+                    <p id="display-story" class="text-xs sm:text-sm md:text-base text-amber-100/95 leading-relaxed font-medium">
+                        Đêm khuya thanh vắng tại Đào Viên, Đại Thánh đang rình rập những trái đào 3.000 năm tuổi... Liệu có qua mắt được nhị sư đệ Trư Bát Giới?
+                    </p>
+                </div>
+
+                <!-- Nút hành động chính: GỌI MÃ SỐ TIẾP THEO -->
+                <div class="mt-5 w-full flex flex-col items-center gap-2">
+                    <button id="btn-draw" onclick="drawNextNumber()" class="btn-gold w-full sm:w-auto sm:min-w-[300px] px-8 py-3.5 sm:py-4 rounded-2xl font-extrabold text-base sm:text-lg tracking-wider uppercase flex items-center justify-center gap-3 cursor-pointer">
+                        <span class="text-2xl">🎲</span>
+                        <span id="btn-draw-text">LẮC XÚC XẮC GỌI SỐ</span>
+                    </button>
+                    <p class="text-xs text-amber-300/60">
+                        Mẹo: Nhấn phím <kbd class="px-1.5 py-0.5 rounded bg-amber-950 border border-amber-500/40 text-amber-200 font-mono">Space</kbd> hoặc <kbd class="px-1.5 py-0.5 rounded bg-amber-950 border border-amber-500/40 text-amber-200 font-mono">Enter</kbd> để quay nhanh
+                    </p>
+                </div>
+            </div>
+
+            <!-- Thanh lịch sử 5 số vừa gọi gần nhất -->
+            <div class="imperial-card rounded-2xl p-4">
+                <div class="flex items-center justify-between mb-2.5">
+                    <span class="text-xs font-bold uppercase tracking-wider text-amber-300/90 flex items-center gap-1.5">
+                        <span>📜</span> Lịch sử gọi gần nhất
+                    </span>
+                    <span class="text-[11px] text-amber-200/60">Bấm vào số để xem lại</span>
+                </div>
+                <div id="recent-history" class="flex items-center gap-2 overflow-x-auto pb-1 min-h-[42px]">
+                    <span class="text-xs text-amber-200/40 italic">Chưa có mã số nào được triệu hồi...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CỘT PHẢI (5 CỘT): BẢNG THEO DÕI LƯỚI 41 MÃ SỐ -->
+        <aside class="lg:col-span-5 imperial-card rounded-3xl p-5 sm:p-6">
+            <div class="corner-ornament corner-tl"></div>
+            <div class="corner-ornament corner-tr"></div>
+            <div class="corner-ornament corner-bl"></div>
+            <div class="corner-ornament corner-br"></div>
+
+            <div class="flex items-center justify-between border-b border-amber-500/30 pb-3 mb-4">
+                <div>
+                    <h3 class="font-serif text-lg sm:text-xl font-bold text-amber-300 flex items-center gap-2">
+                        <span>🗺️</span> Bảng Phong Thần 41 Số
+                    </h3>
+                    <p class="text-xs text-amber-200/70 mt-0.5">
+                        Ô sáng màu là số đã gọi • Bấm ô bất kỳ để xem lại nội dung
+                    </p>
+                </div>
+            </div>
+
+            <!-- Chú thích trạng thái -->
+            <div class="flex flex-wrap items-center gap-3 text-[11px] mb-3 text-amber-200/80">
+                <div class="flex items-center gap-1.5">
+                    <span class="w-3 h-3 rounded bg-red-950/90 border border-amber-500/30 inline-block"></span>
+                    <span>Chưa gọi</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                    <span class="w-3 h-3 rounded bg-gradient-to-br from-amber-400 to-amber-600 border border-yellow-200 inline-block"></span>
+                    <span>Đã gọi</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                    <span class="w-3 h-3 rounded bg-pink-500 border-2 border-white inline-block"></span>
+                    <span>Đang xem</span>
+                </div>
+            </div>
+
+            <!-- Lưới 41 ô số (01 -> 41) -->
+            <div id="numbers-grid" class="grid grid-cols-6 sm:grid-cols-7 lg:grid-cols-6 gap-2">
+                <!-- Các ô từ 01 đến 41 sẽ được render bằng JavaScript -->
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="relative z-10 text-center py-4 px-4 text-xs text-amber-200/50 border-t border-amber-500/20 mt-4">
+        Đào Viên Đại Náo • Trò chơi gọi số hài hước Tây Du Ký (01 - 41)
+    </footer>
+
+    <!-- HỘP THOẠI XÁC NHẬN CHƠI LẠI (CUSTOM MODAL - KHÔNG DÙNG CONFIRM()) -->
+    <div id="reset-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+        <div class="imperial-card rounded-3xl max-w-md w-full p-6 text-center shadow-2xl transform transition-all">
+            <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-rose-500/20 border-2 border-rose-400 flex items-center justify-center text-3xl">
+                🍑
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-amber-300 mb-2">
+                Trồng Lại Vườn Đào Tiên?
+            </h3>
+            <p class="text-sm text-amber-100/85 mb-6 leading-relaxed">
+                Bạn có chắc muốn đặt lại toàn bộ <strong>41 mã số</strong> về trạng thái ban đầu không? Lịch sử các số đã gọi sẽ được xóa sạch để bắt đầu ván mới!
+            </p>
+            <div class="flex items-center justify-center gap-3">
+                <button onclick="closeResetModal()" class="flex-1 py-3 px-4 rounded-xl bg-red-950 hover:bg-red-900 border border-amber-500/40 text-amber-200 font-bold text-sm transition cursor-pointer">
+                    Hủy bỏ
+                </button>
+                <button onclick="confirmReset()" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-red-950 font-extrabold text-sm shadow-lg transition cursor-pointer">
+                    Đồng ý Reset
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT XỬ LÝ LOGIC, ÂM THANH & DỮ LIỆU 41 MÃ SỐ -->
+    <script>
+        // ==========================================
+        // 1. DỮ LIỆU TRỌN BỘ 41 MÃ SỐ ĐÀO VIÊN ĐẠI NÁO
+        // ==========================================
+        const STORY_CODES = [
+            { id: 1, scene: "sneak", title: "Vườn Đào Tiên Mở Cửa", story: "Đại Thánh lén lút lẻn vào Vườn Đào Đào Viên lúc nửa đêm, hương đào tỏa ngào ngạt khắp thiên đình.", wukongSay: "Suỵt! Đêm nay đào tiên vườn này là của lão Tôn!", bajieSay: "Khò... khò... Mùi gì thơm nức mũi thế nhỉ?", icons: ["🐒", "🌙", "🍑", "✨"] },
+            { id: 2, scene: "eat", title: "Cành Cao Gió Lớn", story: "Khỉ ta trèo lên nhánh cao nhất, đôi mắt hỏa nhãn kim tinh nhắm trúng quả đào to đỏ mọng.", wukongSay: "Quả trên ngọn này to bằng cái bát, ngon tuyệt!", bajieSay: "Ủa, trên ngọn cây đào sao có bóng ai lấp ló?", icons: ["🐒", "🌳", "🍑", "💨"] },
+            { id: 3, scene: "sneak", title: "Cú Vọ Canh Gác", story: "Thổ Địa suýt phát hiện nhưng bị Đại Thánh điểm huyệt cho một giấc mộng đẹp.", wukongSay: "Ngủ ngon nhé Thổ Địa, để ta trông vườn hộ cho!", bajieSay: "Hộc hộc... Đói bụng quá, đi dạo một vòng xem sao!", icons: ["👴", "💤", "🐒", "🤫"] },
+            { id: 4, scene: "eat", title: "Quả Đào Đầu Tiên", story: "Cắn ngập răng miếng đầu tiên, vị ngọt lịm lan tỏa khắp lục phủ ngũ tạng!", wukongSay: "Chà chà! Ngọt lịm tim gan, đúng là đào 3.000 năm!", bajieSay: "Tiếng ai nhai rộp rộp nghe quen lắm nha!", icons: ["🐒", "😋", "🍑", "💥"] },
+            { id: 5, scene: "eat", title: "Nhét Đầy Hai Má", story: "Ngộ Không bẻ liền một lúc 5 quả nhét đầy hai bên má, phồng lên như chú sóc chuột.", wukongSay: "Ưm ưm... Nhét đầy túi mang về ăn dần mới đã!", bajieSay: "Ơ kìa! Cây đào sao tự dưng rung bần bật thế?", icons: ["🐒", "🍑", "🍑", "🐹"] },
+            { id: 6, scene: "sneak", title: "Tiếng Động Lạ Ở Lùm Cây", story: "'Hộc... hộc...' – Tiếng thở khò khè quen thuộc vang lên từ bụi cây phía dưới gốc đào.", wukongSay: "Giật cả mình! Tiếng thở như ống bễ của ai vậy?", bajieSay: "Hộc... hộc... Có mùi đào chín ngay trên đầu!", icons: ["🌿", "👀", "🔊", "❓"] },
+            { id: 7, scene: "caught", title: "Bát Giới Xuất Hiện", story: "Trư Bát Giới tay cầm bồ câu quay, miệng nhai dở cái bánh bao, trợn tròn mắt nhìn lên cây.", wukongSay: "Thôi xong! Đụng ngay tên tham ăn Bát Giới rồi!", bajieSay: "Á à! Đại sư huynh! Huynh làm gì trên cây thế?!", icons: ["🐷", "🍗", "🥟", "😲"] },
+            { id: 8, scene: "caught", title: "Bắt Quả Tang!", story: "'Sư huynh! Đứng lại! Khai mau, sao đệ gọi anh mãi mà anh bỏ đi ăn mảnh một mình?'", wukongSay: "Bình tĩnh nào Bát Giới, nghe ta giải thích đã!", bajieSay: "Đứng im đó! Bắt quả tang ăn mảnh đào tiên nhé!", icons: ["🐷", "👉", "🐒", "🚨"] },
+            { id: 9, scene: "argue", title: "Màn Chối Đây Đẩy", story: "Ngộ Không nuốt vội quả đào, chối bay chối biến: 'Ta đang bắt sâu bảo vệ cây cho Vương Mẫu!'", wukongSay: "Oan quá! Ta đang bắt sâu bảo vệ cây cho Vương Mẫu!", bajieSay: "Xì! Bắt sâu gì mà giấu quả đào sau lưng thế kia?", icons: ["🐒", "😇", "🐛", "🌳"] },
+            { id: 10, scene: "caught", title: "Bằng Chứng Rành Rành", story: "Bát Giới chỉ thẳng vào nước đào dính đầy mõm Đại Thánh: 'Sâu gì mà chảy nước ngọt thế cơ à?'", wukongSay: "À ừm... Đây là mồ hôi do bắt sâu vất vả quá!", bajieSay: "Nước đào dính đầy mép kìa, chối vào đâu hả huynh?", icons: ["🐷", "🔍", "💦", "🐒"] },
+            { id: 11, scene: "argue", title: "Đòn Đánh Phủ Đầu", story: "Bát Giới vung đinh ba cửu xỉ đòi chia phần, dọa nếu không chia sẽ đi mách sư phụ và Phật Tổ.", wukongSay: "Ấy đừng la lớn! Thiên binh nghe thấy bây giờ!", bajieSay: "Chia ngay một nửa, không thì đệ đi méch sư phụ!", icons: ["🐷", "🥢", "😤", "⚖️"] },
+            { id: 12, scene: "argue", title: "Kèo Mặc Cả Đầu Tiên", story: "Ngộ Không nhét một quả đào lép xẹp vào tay Bát Giới: 'Cầm tạm quả này rồi ngậm miệng lại!'", wukongSay: "Nè, cầm tạm quả này rồi giữ bí mật cho ta!", bajieSay: "Cái gì đây? Quả đào bé như hạt lạc thế này à?!", icons: ["🐒", "🤝", "🍑", "🤐"] },
+            { id: 13, scene: "argue", title: "Chê Đào Nhỏ", story: "Trư ca bĩu môi dài cả thước: 'Quả này bé như cái khuy áo, định đuổi khéo lão Trư à?'", wukongSay: "Ăn được là may rồi, còn chê ỏng chê eo!", bajieSay: "Bé như khuy áo, chưa đủ dính kẽ răng lão Trư!", icons: ["🐷", "😒", "🤏", "🍑"] },
+            { id: 14, scene: "eat", title: "Tăng Giá Cổ Phiếu Đào", story: "Đại Thánh đành nghiến răng nâng cấp lên quả đào tiên 3.000 năm tuổi to bằng cái bát.", wukongSay: "Đây! Quả 3.000 năm tuổi, vừa lòng chú chưa?", bajieSay: "Ối giời ơi! Quả này mới đúng chuẩn đại gia nè!", icons: ["🐒", "📈", "🍑", "🌟"] },
+            { id: 15, scene: "eat", title: "Mắt Sáng Như Đèn Pha", story: "Mắt Bát Giới sáng rực như đèn pha ô tô, nước dãi chảy thành một dòng sông Ngân Hà.", wukongSay: "Lau nước dãi đi kìa, ướt hết cả vườn đào rồi!", bajieSay: "Ực... Thơm quá, cho đệ cắn một miếng đi huynh!", icons: ["🐷", "🤩", "🤤", "🌊"] },
+            { id: 16, scene: "fight", title: "Chưa Kịp Đớp Đã Mất", story: "Bát Giới vừa há miệng vươn tay chộp thì Ngộ Không đã giật phắt lại trêu ngươi.", wukongSay: "Hụt rồi nhé! Lêu lêu, chậm như rùa bò!", bajieSay: "Ớ! Sao huynh lại giật lại? Chơi xấu thế!", icons: ["🐷", "👐", "💨", "🐒"] },
+            { id: 17, scene: "fight", title: "Trò Chơi Trốn Tìm", story: "Khỉ ta nhảy tót lên ngọn cây cao vút, Bát Giới vụng về lao theo húc đầu cái 'Bốp' vào gốc.", wukongSay: "Ha ha! Béo như chú làm sao leo nổi cây này!", bajieSay: "BỐP! Ái da... Cái gốc cây cứng như sắt vậy!", icons: ["🐒", "⬆️", "🐷", "💥"] },
+            { id: 18, scene: "shake_tree", title: "Đất Trời Rung Rinh", story: "Trọng lượng 9 tạ của nhị sư đệ khiến cả khu vườn đào rung chuyển như động đất cấp 8.", wukongSay: "Ê ê! Đừng có rung cây nữa, chóng mặt quá!", bajieSay: "Huynh không xuống thì đệ cho cả vườn động đất!", icons: ["🐷", "⚖️", "🌋", "🌳"] },
+            { id: 19, scene: "shake_tree", title: "Cú Húc Trụ Huyền Thoại", story: "Bát Giới cay cú quyết định lấy đà húc thẳng vào gốc cây cho đào rụng xuống như mưa.", wukongSay: "Khoan đã! Đừng húc gốc cây thần, gãy bây giờ!", bajieSay: "Xem tuyệt chiêu Thiết Đầu Công của lão Trư đây!", icons: ["🐷", "🐗", "💨", "🌳"] },
+            { id: 20, scene: "shake_tree", title: "Mưa Đào Rơi Trúng Đầu", story: "Rào rào! Cả trăm quả đào rụng trúng đầu Bát Giới khiến trán mọc lên mấy cục u to tướng.", wukongSay: "Ha ha ha! Đáng đời, mọc thêm sừng rồi kìa!", bajieSay: "Ối giời ơi! Đào rơi u hết cả đầu đệ rồi!", icons: ["🍑", "🌧️", "🤕", "🐷"] },
+            { id: 21, scene: "eat", title: "Bát Giới 'Ăn Hôi'", story: "Nhị sư đệ nằm ngửa há miệng ăn liền chục quả rơi thẳng vào họng, thỏa mãn cực độ.", wukongSay: "Này! Chừa phần cho ta với chứ tên tham ăn!", bajieSay: "Ngoàm ngoàm! Ngon quá, rụng nữa đi cây ơi!", icons: ["🐷", "😋", "🍑", "🎉"] },
+            { id: 22, scene: "fight", title: "Cơn Giận Của Tề Thiên", story: "Thấy đệ tử ăn sạch phần mình, Ngộ Không nhảy xuống gõ cho Bát Giới một gậy đau điếng.", wukongSay: "Cho chừa cái tội ăn hết phần của sư huynh nè!", bajieSay: "Ái! Nhẹ tay thôi huynh ơi, u thêm cục nữa rồi!", icons: ["🐒", "🥢", "💢", "🐷"] },
+            { id: 23, scene: "fight", title: "Cuộc Chiến Tranh Giành Quả Cuối", story: "Cả hai lao vào tranh nhau quả đào tiên khổng lồ to bằng cả cái mâm gốm sứ.", wukongSay: "Buông ra! Quả to nhất này là của lão Tôn!", bajieSay: "Không buông! Đệ thấy trước, chia đôi đi!", icons: ["🐒", "⚔️", "🐷", "🍑"] },
+            { id: 24, scene: "fight", title: "Sứt Đầu Mẻ Trán", story: "Giằng co qua lại, quả đào trơn tuột văng thẳng xuống khe đá sâu hoắm dưới chân núi.", wukongSay: "Á! Tuột tay rồi! Quả đào rơi xuống vực mất rồi!", bajieSay: "Ối không! Quả đào to nhất của đệ rơi mất tiêu!", icons: ["💫", "🍑", "🕳️", "😱"] },
+            { id: 25, scene: "argue", title: "Tiếc Hùi Hụi", story: "Hai kẻ ham ăn đứng nhìn xuống khe đá tối om, nuốt nước bọt ừng ực đầy cay đắng.", wukongSay: "Tất cả là tại chú giành giật làm rơi mất!", bajieSay: "Tại huynh không chịu chia từ đầu thì có!", icons: ["🐒", "🐷", "😭", "💔"] },
+            { id: 26, scene: "caught", title: "Tiếng Động Từ Thiên Đình", story: "Tiếng bước chân rầm rập của Nhị Lang Thần và thiên binh thiên tướng đang tiến đến gần.", wukongSay: "Suỵt! Thiên binh kéo tới rồi, chuồn lẹ thôi!", bajieSay: "Chết cha! Lính thiên đình tới bắt trộm rồi!", icons: ["🛡️", "⚔️", "👣", "⚠️"] },
+            { id: 27, scene: "escape", title: "Đồng Minh Bất Đắc Dĩ", story: "Ngộ Không và Bát Giới lập tức bắt tay giảng hòa, thề non hẹn biển cùng nhau chạy trốn.", wukongSay: "Tạm đình chiến! Bám chặt vào ta để tẩu thoát!", bajieSay: "Nhất trí! Huynh đệ đồng lòng chạy lẹ thôi!", icons: ["🐒", "🤝", "🐷", "🏃"] },
+            { id: 28, scene: "escape", title: "Màn Phi Thân Ẩn Nấp", story: "Ngộ Không tóm chặt cổ áo Bát Giới, tung người cưỡi cân đẩu vân bay vút lên mây xanh.", wukongSay: "Cân Đẩu Vân, bay lên! Giữ chặt nhé Bát Giới!", bajieSay: "Úi giời ơi! Bay cao quá, đệ chóng mặt quá!", icons: ["🐒", "☁️", "🚀", "🐷"] },
+            { id: 29, scene: "escape", title: "Bụng Bự Cản Trở", story: "Bát Giới ăn no căng bụng nặng trịch kéo tụt chân Ngộ Không xuống, suýt nữa thì lộ tẩy.", wukongSay: "Chú ăn gì mà nặng như tảng đá thế này hả?!", bajieSay: "Tại đào ngon quá nên đệ lỡ ăn hơi no xíu!", icons: ["🐷", "🍔", "⬇️", "💦"] },
+            { id: 30, scene: "escape", title: "Văng Đồ Giữa Không Trung", story: "Vỏ đào và hột đào từ túi áo cả hai rơi lả tả xuống trúng đầu lính gác Nam Thiên Môn.", wukongSay: "Rơi hết tang vật xuống Nam Thiên Môn rồi kìa!", bajieSay: "Ối, hột đào rơi trúng mũ thiên binh rồi!", icons: ["🍑", "🗑️", "⬇️", "💂"] },
+            { id: 31, scene: "escape", title: "Lực Lượng Đuổi Bắt", story: "Thiên binh thiên tướng chỉ tay hô hào vang trời: 'Đứng lại! Kẻ nào dám ăn trộm đào tiên!'", wukongSay: "Tăng tốc thôi! Bị đuổi sát nút rồi!", bajieSay: "Cứu mạng! Đừng bắn tên vào mông đệ!", icons: ["📢", "⚔️", "🔥", "🚨"] },
+            { id: 32, scene: "escape", title: "Hạ Cánh Nơi Trần Thế", story: "Mất thăng bằng, cả hai lao thẳng xuống hạ giới, cắm đầu cái 'Phịch' xuống đống rơm.", wukongSay: "Hạ cánh khẩn cấp! Bám chắc vào... PHỊCH!", bajieSay: "Ối giời ơi! Cắm đầu xuống đống rơm rồi!", icons: ["☄️", "🌾", "💥", "🙃"] },
+            { id: 33, scene: "dream", title: "Tỉnh Giấc Mộng Vàng", story: "Ngộ Không giật mình ngồi dậy thở dốc, hóa ra tất cả nãy giờ chỉ là một giấc mơ trưa hè!", wukongSay: "Hộc... hộc... Hóa ra nãy giờ chỉ là giấc mơ trưa?!", bajieSay: "Khò... khò... (Đang ngủ say sưa bên cạnh)", icons: ["🐒", "😳", "💭", "☀️"] },
+            { id: 34, scene: "dream", title: "Kiểm Tra Lại Giỏ Đào", story: "Khỉ ta vội sờ lên trán xem có bị u sưng không, miệng vẫn lẩm bẩm trách móc Bát Giới.", wukongSay: "Ủa, không có quả đào nào, may mà chưa bị bắt!", bajieSay: "Ưm... Đừng giành đào của lão Trư... khò...", icons: ["🐒", "🤦", "❓", "💬"] },
+            { id: 35, scene: "dream", title: "Bát Giới Thật Xuất Hiện", story: "Bát Giới thật từ ngoài bước đến, tay cầm chiếc quạt mo gõ nhẹ vào đầu Ngộ Không.", wukongSay: "Á! Bát Giới, chú định đánh lén ta đấy à?", bajieSay: "Dậy đi đại sư huynh! Trời sắp tối rồi kìa!", icons: ["🐷", "🪭", "👋", "🐒"] },
+            { id: 36, scene: "dream", title: "Cái Kết Cười Ra Nước Mắt", story: "'Đại sư huynh, huynh ngủ mơ kiểu gì mà gác chân lên mặt đệ suốt cả buổi trưa đấy nhé!'", wukongSay: "Hả? Chân ta gác lên mặt chú hồi nào chứ!", bajieSay: "Huynh ngủ mơ đạp đệ mấy phát làm đệ tưởng thật!", icons: ["🐷", "🦶", "😂", "🐒"] },
+            { id: 37, scene: "dream", title: "Đại Thánh Ngậm Ngùi", story: "Hóa ra người bị bắt quả tang ăn vụng trong mơ lại chính là sự tưởng tượng của Đại Thánh.", wukongSay: "Tiếc thật! Trong mơ còn chưa kịp ăn no đã tỉnh!", bajieSay: "Mặt huynh ngẩn ngơ thế, chắc vừa mơ thấy gì ngon?", icons: ["🐒", "😅", "💦", "🎭"] },
+            { id: 38, scene: "argue", title: "Chia Sẻ Bí Mật", story: "Ngộ Không đành gãi đầu gãi tai kể lại toàn bộ chiến tích trộm đào trong mơ cho nhị đệ nghe.", wukongSay: "Nói nhỏ nghe nè, nãy ta mơ lên vườn đào...", bajieSay: "Thật hả huynh?! Đào to cỡ nào kể đệ nghe với!", icons: ["🐒", "🗣️", "🐷", "👂"] },
+            { id: 39, scene: "eat", title: "Bát Giới Nuốt Nước Mọt", story: "Bát Giới nghe xong tiếc hùi hụi, nằng nặc đòi sư huynh tối nay đi thực chiến một chuyến.", wukongSay: "Suỵt! Nói bé thôi không sư phụ nghe thấy!", bajieSay: "Ực... Tối nay huynh dẫn đệ đi thật nhé huynh!", icons: ["🐷", "🤤", "🌙", "🍑"] },
+            { id: 40, scene: "master", title: "Bị Sư Phụ Bắt Gặp", story: "Đường Tăng đứng đằng sau từ bao giờ, mặt nghiêm nghị cầm thiền trượng gõ đầu cả hai.", wukongSay: "Ấy chết! Sư phụ đứng đằng sau từ bao giờ vậy?!", bajieSay: "Con không biết gì đâu sư phụ ơi, tại huynh ấy rủ!", icons: ["🧘", "🥢", "💢", "🐒"] },
+            { id: 41, scene: "master", title: "Vòng Lặp Đại Náo", story: "'Hai con khỉ này, lo tụng kinh đi lại còn mơ mộng ăn đào!' – Đại kết cục tấu hài viên mãn!", wukongSay: "Dạ con biết lỗi rồi sư phụ! (Lần sau đi kín hơn)", bajieSay: "Nam mô A Di Đà Phật... Con xin chừa ăn vụng ạ!", icons: ["🧘", "📖", "🐒", "🐷"] }
+        ];
+
+        // ==========================================
+        // 2. QUẢN LÝ TRẠNG THÁI ỨNG DỤNG
+        // ==========================================
+        let remainingIds = [];
+        let calledIds = [];
+        let currentViewingId = null;
+        let isSpinning = false;
+        let soundEnabled = true;
+        let audioCtx = null;
+        let brawlInterval = null;
+
+        // Các câu cà khịa & hiệu ứng truyện tranh khi 2 nhân vật quýnh nhau lúc lắc số
+        const BRAWL_BANTER = [
+            { wukong: "Trả đào lại cho lão Tôn mau!", bajie: "Còn lâu nhá! Vào bụng đệ rồi!" },
+            { wukong: "Ăn mảnh nè! Đỡ gậy của ta!", bajie: "Ái da! Đừng đánh vào đầu đệ!" },
+            { wukong: "Hôm nay ta cho chú thành heo quay!", bajie: "Đinh ba 9 răng của lão Trư đâu rồi!" },
+            { wukong: "Buông quả đào 3.000 năm ra!", bajie: "Huynh ăn 5 quả rồi, chia đệ 1 quả đi!" },
+            { wukong: "Xem Thiết Bảng Như Ý lợi hại đây!", bajie: "Cứu mạng! Sư huynh bắt nạt đệ!" }
+        ];
+        const COMIC_WORDS = ["BỐP!", "CHOANG!", "CHÁT!", "ÁI!", "HỰ!", "BỊCH!", "XOẸT!"];
+
+        // Bật/Tắt trạng thái 2 nhân vật lao vào giữa quýnh nhau túi bụi khi đang lắc xúc xắc
+        function setBrawlMode(active) {
+            const wukongActor = document.getElementById('wukong-actor');
+            const bajieActor = document.getElementById('bajie-actor');
+            const wukongStaff = document.getElementById('wukong-staff');
+            const bajieRake = document.getElementById('bajie-rake');
+            const brawlCloud = document.getElementById('brawl-cloud-fx');
+            const fxLayer = document.getElementById('comic-fx-layer');
+
+            if (active) {
+                wukongActor.className = 'character-wrapper anim-wukong-brawl absolute bottom-3 left-[10%] sm:left-[16%] w-28 sm:w-36 h-36 sm:h-44 z-25';
+                bajieActor.className = 'character-wrapper anim-bajie-brawl absolute bottom-3 right-[10%] sm:right-[16%] w-32 sm:w-40 h-36 sm:h-44 z-25';
+                wukongStaff.classList.add('anim-staff-swing');
+                bajieRake.classList.add('anim-rake-swing');
+                brawlCloud.classList.remove('hidden');
+
+                let step = 0;
+                const triggerHit = () => {
+                    const pair = BRAWL_BANTER[step % BRAWL_BANTER.length];
+                    document.getElementById('wukong-quote').textContent = `"${pair.wukong}"`;
+                    document.getElementById('bajie-quote').textContent = `"${pair.bajie}"`;
+
+                    // Tạo chữ truyện tranh bay lên từ đám mây chiến đấu
+                    const wordEl = document.createElement('span');
+                    const word = COMIC_WORDS[Math.floor(Math.random() * COMIC_WORDS.length)];
+                    const colors = ['text-yellow-300', 'text-rose-400', 'text-amber-300', 'text-white'];
+                    wordEl.textContent = word;
+                    wordEl.className = `comic-onomatopoeia font-serif font-black text-xl sm:text-2xl ${colors[step % colors.length]}`;
+                    wordEl.style.left = `${42 + Math.random() * 16}%`;
+                    wordEl.style.top = `${36 + Math.random() * 14}%`;
+                    fxLayer.appendChild(wordEl);
+                    setTimeout(() => wordEl.remove(), 650);
+
+                    step++;
+                };
+
+                triggerHit();
+                brawlInterval = setInterval(triggerHit, 320);
+            } else {
+                if (brawlInterval) {
+                    clearInterval(brawlInterval);
+                    brawlInterval = null;
+                }
+                wukongStaff.classList.remove('anim-staff-swing');
+                bajieRake.classList.remove('anim-rake-swing');
+                brawlCloud.classList.add('hidden');
+                fxLayer.innerHTML = '';
+            }
+        }
+
+        // Cập nhật mặt 3 viên xúc xắc 3D trên đĩa
+        function randomizeDiceFaces() {
+            const faces = [
+                { text: '●', color: 'text-red-600 text-base' },
+                { text: '● ●', color: 'text-slate-900 text-xs' },
+                { text: '●●●', color: 'text-slate-900 text-[10px]' },
+                { text: '●●\n●●', color: 'text-red-600 text-[10px] leading-tight whitespace-pre' },
+                { text: '●●●\n●●', color: 'text-slate-900 text-[10px] leading-tight whitespace-pre' },
+                { text: '●●●\n●●●', color: 'text-red-600 text-[10px] leading-tight whitespace-pre' }
+            ];
+            ['die-1', 'die-2', 'die-3'].forEach((id, idx) => {
+                const el = document.getElementById(id);
+                const face = faces[Math.floor(Math.random() * faces.length)];
+                el.className = `dice-3d dice-pop w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center text-center font-black ${face.color}`;
+                el.style.animationDelay = `${idx * 0.06}s`;
+                el.textContent = face.text;
+            });
+        }
+
+        // Cập nhật biểu cảm & chuyển động 2 nhân vật SVG theo ngữ cảnh
+        function updateStageCharacters(sceneType, wukongText, bajieText) {
+            setBrawlMode(false);
+            const wukongActor = document.getElementById('wukong-actor');
+            const bajieActor = document.getElementById('bajie-actor');
+            const peachTree = document.getElementById('svg-peach-tree');
+            const peachRain = document.getElementById('peach-rain-group');
+            const masterTang = document.getElementById('master-tang-silhouette');
+
+            const wukongPeachHand = document.getElementById('wukong-peach-hand');
+            const wukongMouth = document.getElementById('wukong-mouth');
+            const bajieDrool = document.getElementById('bajie-drool');
+            const bajieBump = document.getElementById('bajie-bump');
+            const bajieMouth = document.getElementById('bajie-mouth');
+            const bajiePointHand = document.getElementById('bajie-point-hand');
+
+            // Cập nhật lời thoại trong bong bóng
+            document.getElementById('wukong-quote').textContent = `"${wukongText}"`;
+            document.getElementById('bajie-quote').textContent = `"${bajieText}"`;
+
+            // Reset các lớp animation & phụ kiện
+            wukongActor.className = 'character-wrapper absolute bottom-3 left-[10%] sm:left-[16%] w-28 sm:w-36 h-36 sm:h-44 z-20';
+            bajieActor.className = 'character-wrapper absolute bottom-3 right-[10%] sm:right-[16%] w-32 sm:w-40 h-36 sm:h-44 z-20';
+            peachTree.classList.remove('anim-tree-shake');
+            peachRain.classList.add('hidden');
+            masterTang.classList.add('hidden');
+            bajieDrool.classList.add('hidden');
+            bajieBump.classList.add('hidden');
+            wukongPeachHand.classList.remove('hidden');
+            bajiePointHand.classList.remove('hidden');
+
+            // Biểu cảm mặc định
+            wukongMouth.setAttribute('d', 'M70 76 Q80 84 90 76');
+            bajieMouth.setAttribute('d', 'M80 85 Q90 92 100 85');
+
+            switch (sceneType) {
+                case 'sneak':
+                    wukongActor.classList.add('anim-sneak');
+                    bajieActor.classList.add('anim-sneak');
+                    break;
+                case 'eat':
+                    wukongActor.classList.add('anim-jump');
+                    bajieActor.classList.add('anim-sneak');
+                    bajieDrool.classList.remove('hidden');
+                    wukongMouth.setAttribute('d', 'M72 78 Q80 88 88 78 Z');
+                    bajieMouth.setAttribute('d', 'M82 84 Q90 95 98 84 Z');
+                    break;
+                case 'caught':
+                    wukongActor.classList.add('anim-panic');
+                    bajieActor.classList.add('anim-jump');
+                    wukongMouth.setAttribute('d', 'M74 82 Q80 74 86 82');
+                    bajieMouth.setAttribute('d', 'M78 83 L102 83 Q90 96 78 83 Z');
+                    break;
+                case 'argue':
+                    wukongActor.classList.add('anim-jump');
+                    bajieActor.classList.add('anim-panic');
+                    break;
+                case 'shake_tree':
+                    wukongActor.classList.add('anim-panic');
+                    bajieActor.classList.add('anim-charge');
+                    peachTree.classList.add('anim-tree-shake');
+                    peachRain.classList.remove('hidden');
+                    bajieBump.classList.remove('hidden');
+                    break;
+                case 'fight':
+                    wukongActor.classList.add('anim-charge');
+                    bajieActor.classList.add('anim-charge');
+                    bajieBump.classList.remove('hidden');
+                    break;
+                case 'escape':
+                    wukongActor.classList.add('anim-fly');
+                    bajieActor.classList.add('anim-fly');
+                    wukongMouth.setAttribute('d', 'M74 82 Q80 73 86 82');
+                    bajieMouth.setAttribute('d', 'M80 88 Q90 78 100 88');
+                    break;
+                case 'dream':
+                    wukongActor.classList.add('anim-sneak');
+                    bajieActor.classList.add('anim-sneak');
+                    wukongPeachHand.classList.add('hidden');
+                    break;
+                case 'master':
+                    wukongActor.classList.add('anim-panic');
+                    bajieActor.classList.add('anim-panic');
+                    masterTang.classList.remove('hidden');
+                    bajieBump.classList.remove('hidden');
+                    wukongMouth.setAttribute('d', 'M74 82 Q80 74 86 82');
+                    bajieMouth.setAttribute('d', 'M80 88 Q90 78 100 88');
+                    break;
+                default:
+                    wukongActor.classList.add('anim-sneak');
+                    bajieActor.classList.add('anim-sneak');
+            }
+        }
+
+        // Khởi tạo dữ liệu khi tải trang
+        function initApp() {
+            remainingIds = STORY_CODES.map(item => item.id);
+            calledIds = [];
+            currentViewingId = null;
+            isSpinning = false;
+
+            // Reset giao diện sân khấu
+            document.getElementById('display-number').textContent = '??';
+            document.getElementById('display-title').textContent = 'Bấm nút bên dưới để gọi số!';
+            document.getElementById('display-story').textContent = 'Đêm khuya thanh vắng tại Đào Viên, Đại Thánh đang rình rập những trái đào 3.000 năm tuổi... Liệu có qua mắt được nhị sư đệ Trư Bát Giới?';
+            document.getElementById('story-icons').innerHTML = '<span>🐒</span><span>🍑</span><span>🐷</span><span>🥢</span>';
+            document.getElementById('status-badge').innerHTML = '<span>✨ Sẵn sàng đột nhập Vườn Đào Tiên</span>';
+
+            updateStageCharacters(
+                'sneak',
+                'Đêm nay đào tiên vườn này là của lão Tôn!',
+                'Hộc hộc... Hình như có mùi đào chín đâu đây!'
+            );
+
+            const btnDraw = document.getElementById('btn-draw');
+            btnDraw.disabled = false;
+            document.getElementById('btn-draw-text').textContent = 'LẮC XÚC XẮC GỌI SỐ';
+
+            // Đảm bảo nắp bát mở sẵn lúc đầu
+            const bowlLid = document.getElementById('bowl-lid');
+            bowlLid.classList.remove('bowl-lid-closed', 'bowl-shaking');
+            bowlLid.classList.add('bowl-lid-open');
+
+            updateStats();
+            renderGrid();
+            renderRecentHistory();
+            createFallingPetals();
+        }
+
+        // ==========================================
+        // 3. HỆ THỐNG ÂM THANH WEB AUDIO API (KHÔNG CẦN FILE NGOÀI)
+        // ==========================================
+        function initAudioContext() {
+            if (!audioCtx) {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                audioCtx = new AudioContext();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
+
+        // Tiếng xúc xắc lắc lách cách trong bát sứ + tiếng binh khí chạm nhau choang choang
+        function playTickSound() {
+            if (!soundEnabled) return;
+            try {
+                initAudioContext();
+                const now = audioCtx.currentTime;
+
+                // 1. Tiếng xúc xắc chạm thành bát sứ (lách cách tần số cao)
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(1100 + Math.random() * 550, now);
+                osc.frequency.exponentialRampToValueAtTime(320, now + 0.045);
+
+                gain.gain.setValueAtTime(0.18, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start(now);
+                osc.stop(now + 0.055);
+
+                // 2. Thỉnh thoảng thêm tiếng gậy Như Ý & đinh ba choảng nhau "Choang!"
+                if (Math.random() > 0.55) {
+                    const clangOsc = audioCtx.createOscillator();
+                    const clangGain = audioCtx.createGain();
+                    clangOsc.type = 'sawtooth';
+                    clangOsc.frequency.setValueAtTime(780 + Math.random() * 240, now);
+                    clangOsc.frequency.exponentialRampToValueAtTime(420, now + 0.09);
+
+                    clangGain.gain.setValueAtTime(0.09, now);
+                    clangGain.gain.exponentialRampToValueAtTime(0.001, now + 0.095);
+
+                    clangOsc.connect(clangGain);
+                    clangGain.connect(audioCtx.destination);
+                    clangOsc.start(now);
+                    clangOsc.stop(now + 0.1);
+                }
+            } catch (e) {}
+        }
+
+        // Tiếng hiệu ứng vui nhộn (tiếng khỉ / chiêng trống lễ hội) khi chốt số
+        function playRevealSound() {
+            if (!soundEnabled) return;
+            try {
+                initAudioContext();
+                const now = audioCtx.currentTime;
+
+                // 1. Tiếng chiêng đồng vang (Gong)
+                const gongOsc = audioCtx.createOscillator();
+                const gongGain = audioCtx.createGain();
+                gongOsc.type = 'sine';
+                gongOsc.frequency.setValueAtTime(261.63, now); // C4
+                gongOsc.frequency.exponentialRampToValueAtTime(196.00, now + 0.6); // G3
+                gongGain.gain.setValueAtTime(0.3, now);
+                gongGain.gain.exponentialRampToValueAtTime(0.001, now + 0.7);
+                gongOsc.connect(gongGain);
+                gongGain.connect(audioCtx.destination);
+                gongOsc.start(now);
+                gongOsc.stop(now + 0.75);
+
+                // 2. Tiếng khỉ kêu "Chít chít!" lém lỉnh
+                [0, 0.14].forEach((delay, idx) => {
+                    const monkeyOsc = audioCtx.createOscillator();
+                    const monkeyGain = audioCtx.createGain();
+                    monkeyOsc.type = 'sine';
+                    const baseFreq = idx === 0 ? 900 : 1150;
+                    monkeyOsc.frequency.setValueAtTime(baseFreq, now + delay);
+                    monkeyOsc.frequency.exponentialRampToValueAtTime(baseFreq * 1.45, now + delay + 0.06);
+                    monkeyOsc.frequency.exponentialRampToValueAtTime(baseFreq * 0.85, now + delay + 0.12);
+
+                    monkeyGain.gain.setValueAtTime(0.2, now + delay);
+                    monkeyGain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.13);
+
+                    monkeyOsc.connect(monkeyGain);
+                    monkeyGain.connect(audioCtx.destination);
+                    monkeyOsc.start(now + delay);
+                    monkeyOsc.stop(now + delay + 0.14);
+                });
+            } catch (e) {}
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            const icon = document.getElementById('sound-icon');
+            const text = document.getElementById('sound-text');
+            if (soundEnabled) {
+                icon.textContent = '🔊';
+                text.textContent = 'Âm thanh: BẬT';
+                playTickSound();
+            } else {
+                icon.textContent = '🔇';
+                text.textContent = 'Âm thanh: TẮT';
+            }
+        }
+
+        // ==========================================
+        // 4. LOGIC QUAY SỐ NGẪU NHIÊN & HIỂN THỊ
+        // ==========================================
+        function formatNumber(num) {
+            return num < 10 ? `0${num}` : `${num}`;
+        }
+
+        function drawNextNumber() {
+            if (isSpinning || remainingIds.length === 0) return;
+
+            isSpinning = true;
+            const btnDraw = document.getElementById('btn-draw');
+            const displayNum = document.getElementById('display-number');
+            const displayTitle = document.getElementById('display-title');
+            const displayStory = document.getElementById('display-story');
+            const statusBadge = document.getElementById('status-badge');
+            const numberCircle = document.getElementById('number-circle');
+            const bowlLid = document.getElementById('bowl-lid');
+
+            btnDraw.disabled = true;
+            document.getElementById('btn-draw-text').textContent = 'ĐANG LẮC XÚC XẮC & QUÝNH NHAU...';
+            statusBadge.innerHTML = '<span class="animate-pulse">⚔️ Đại Thánh & Bát Giới đang choảng nhau túi bụi!</span>';
+            displayTitle.textContent = 'Bát sứ đang xóc... Hai đồ đệ đang quyết chiến!';
+            displayStory.textContent = 'Choang! Bốp! Chát! Gậy Như Ý và Đinh Ba 9 răng va chạm nảy lửa trên đĩa Thiên Đình...';
+            numberCircle.classList.add('animate-pulse');
+
+            // Đậy nắp bát úp lên đĩa và bắt đầu rung lắc dữ dội
+            bowlLid.classList.remove('bowl-lid-open');
+            bowlLid.classList.add('bowl-lid-closed');
+            setTimeout(() => {
+                if (isSpinning) bowlLid.classList.add('bowl-shaking');
+            }, 140);
+
+            // Kích hoạt 2 nhân vật lao vào giữa sân khấu quýnh nhau kịch tính
+            setBrawlMode(true);
+
+            // Chọn trước kết quả ngẫu nhiên từ danh sách còn lại
+            const randomIndex = Math.floor(Math.random() * remainingIds.length);
+            const selectedId = remainingIds[randomIndex];
+
+            // Hiệu ứng lắc bát & nhảy số kịch tính
+            let ticks = 0;
+            const totalTicks = 28;
+            const interval = setInterval(() => {
+                const fakeNum = Math.floor(Math.random() * 41) + 1;
+                displayNum.textContent = formatNumber(fakeNum);
+                playTickSound();
+                ticks++;
+
+                if (ticks >= totalTicks) {
+                    clearInterval(interval);
+                    finalizeDraw(selectedId, randomIndex);
+                }
+            }, 60);
+        }
+
+        function finalizeDraw(selectedId, indexInRemaining) {
+            // Mở nắp bát sứ bay lên & cho 3 viên xúc xắc 3D nảy lên trên đĩa
+            const bowlLid = document.getElementById('bowl-lid');
+            bowlLid.classList.remove('bowl-shaking', 'bowl-lid-closed');
+            bowlLid.classList.add('bowl-lid-open');
+            randomizeDiceFaces();
+
+            // Cập nhật mảng đã gọi & còn lại
+            remainingIds.splice(indexInRemaining, 1);
+            calledIds.push(selectedId);
+            currentViewingId = selectedId;
+            isSpinning = false;
+
+            const numberCircle = document.getElementById('number-circle');
+            numberCircle.classList.remove('animate-pulse');
+            numberCircle.classList.add('animate-bounce-short');
+            setTimeout(() => numberCircle.classList.remove('animate-bounce-short'), 500);
+
+            playRevealSound();
+            displayCodeDetails(selectedId, true);
+            updateStats();
+            renderGrid();
+            renderRecentHistory();
+
+            const btnDraw = document.getElementById('btn-draw');
+            if (remainingIds.length === 0) {
+                btnDraw.disabled = true;
+                document.getElementById('btn-draw-text').textContent = 'ĐÃ HÁI HẾT 41 QUẢ ĐÀO!';
+                document.getElementById('status-badge').innerHTML = '<span>🎉 Hoàn tất toàn bộ 41 phân cảnh Đào Viên!</span>';
+            } else {
+                btnDraw.disabled = false;
+                document.getElementById('btn-draw-text').textContent = 'LẮC XÚC XẮC GỌI SỐ';
+            }
+        }
+
+        // Hiển thị nội dung chi tiết của một mã số lên sân khấu chính
+        function displayCodeDetails(id, isNewDraw = false) {
+            const item = STORY_CODES.find(c => c.id === id);
+            if (!item) return;
+
+            currentViewingId = id;
+            if (!isNewDraw) {
+                randomizeDiceFaces();
+            }
+            document.getElementById('display-number').textContent = formatNumber(item.id);
+            document.getElementById('display-title').textContent = item.title;
+            document.getElementById('display-story').textContent = item.story;
+
+            // Cập nhật icon minh họa
+            const iconsHtml = item.icons.map(ic => `<span class="inline-block hover:scale-125 transition">${ic}</span>`).join('');
+            document.getElementById('story-icons').innerHTML = iconsHtml;
+
+            // Cập nhật sân khấu 2 nhân vật SVG & bong bóng thoại
+            updateStageCharacters(item.scene, item.wukongSay, item.bajieSay);
+
+            const statusBadge = document.getElementById('status-badge');
+            if (isNewDraw) {
+                statusBadge.innerHTML = `<span>🔥 Vừa triệu hồi thành công Mã số ${formatNumber(item.id)}!</span>`;
+            } else {
+                const isCalled = calledIds.includes(id);
+                statusBadge.innerHTML = isCalled 
+                    ? `<span>📜 Đang xem lại Mã số ${formatNumber(item.id)} (Đã gọi)</span>`
+                    : `<span>👀 Xem trước Mã số ${formatNumber(item.id)} (Chưa gọi)</span>`;
+            }
+
+            renderGrid();
+        }
+
+        // ==========================================
+        // 5. CẬP NHẬT GIAO DIỆN BẢNG LƯỚI & THỐNG KÊ
+        // ==========================================
+        function updateStats() {
+            document.getElementById('stat-called').textContent = calledIds.length;
+            document.getElementById('stat-remaining').textContent = remainingIds.length;
+        }
+
+        function renderGrid() {
+            const grid = document.getElementById('numbers-grid');
+            grid.innerHTML = '';
+
+            STORY_CODES.forEach(item => {
+                const isCalled = calledIds.includes(item.id);
+                const isViewing = currentViewingId === item.id;
+
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.textContent = formatNumber(item.id);
+                btn.title = `${formatNumber(item.id)}: ${item.title}`;
+                btn.onclick = () => {
+                    if (!isSpinning) {
+                        playTickSound();
+                        displayCodeDetails(item.id, false);
+                    }
+                };
+
+                // Phối màu từng trạng thái ô số
+                let classes = 'aspect-square rounded-xl font-extrabold text-sm sm:text-base flex items-center justify-center transition-all duration-200 cursor-pointer select-none ';
+                
+                if (isViewing) {
+                    classes += 'bg-gradient-to-br from-pink-500 to-rose-600 text-white border-2 border-white scale-105 shadow-[0_0_15px_rgba(244,63,94,0.8)] z-10';
+                } else if (isCalled) {
+                    classes += 'bg-gradient-to-br from-amber-300 via-amber-500 to-amber-600 text-red-950 border border-yellow-200 shadow-md hover:scale-105';
+                } else {
+                    classes += 'bg-red-950/80 text-amber-200/50 border border-amber-500/25 hover:border-amber-400/70 hover:text-amber-200';
+                }
+
+                btn.className = classes;
+                grid.appendChild(btn);
+            });
+        }
+
+        function renderRecentHistory() {
+            const container = document.getElementById('recent-history');
+            if (calledIds.length === 0) {
+                container.innerHTML = '<span class="text-xs text-amber-200/40 italic">Chưa có mã số nào được triệu hồi...</span>';
+                return;
+            }
+
+            // Lấy 6 số gọi gần nhất theo thứ tự mới nhất đứng trước
+            const recent = [...calledIds].reverse().slice(0, 6);
+            container.innerHTML = recent.map((id, idx) => {
+                const item = STORY_CODES.find(c => c.id === id);
+                const isLatest = idx === 0;
+                return `
+                    <button onclick="if(!isSpinning){ playTickSound(); displayCodeDetails(${id}, false); }" 
+                        class="shrink-0 px-3 py-1.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition cursor-pointer ${
+                            isLatest 
+                            ? 'bg-amber-400 text-red-950 border-yellow-200 shadow-md' 
+                            : 'bg-red-950/90 text-amber-200 border-amber-500/40 hover:bg-red-900'
+                        }">
+                        <span>#${formatNumber(id)}</span>
+                        <span class="max-w-[110px] truncate font-medium opacity-90">${item.title}</span>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        // ==========================================
+        // 6. HỘP THOẠI RESET & PHÍM TẮT
+        // ==========================================
+        function openResetModal() {
+            if (isSpinning) return;
+            const modal = document.getElementById('reset-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeResetModal() {
+            const modal = document.getElementById('reset-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function confirmReset() {
+            closeResetModal();
+            initApp();
+            playTickSound();
+        }
+
+        // Hỗ trợ nhấn phím Space hoặc Enter để gọi số nhanh
+        document.addEventListener('keydown', (e) => {
+            const modalOpen = !document.getElementById('reset-modal').classList.contains('hidden');
+            if (modalOpen) {
+                if (e.key === 'Escape') closeResetModal();
+                return;
+            }
+
+            if (e.code === 'Space' || e.code === 'Enter') {
+                // Tránh kích hoạt kép nếu đang focus vào button
+                if (document.activeElement.tagName === 'BUTTON') return;
+                e.preventDefault();
+                drawNextNumber();
+            }
+        });
+
+        // Tạo hiệu ứng hoa đào rơi nhẹ trên nền
+        function createFallingPetals() {
+            const container = document.getElementById('petals-container');
+            container.innerHTML = '';
+            const icons = ['🌸', '🍑', '✨'];
+            for (let i = 0; i < 12; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal text-sm sm:text-base';
+                petal.textContent = icons[i % icons.length];
+                petal.style.left = `${Math.random() * 100}vw`;
+                petal.style.animationDuration = `${8 + Math.random() * 10}s`;
+                petal.style.animationDelay = `${Math.random() * 5}s`;
+                container.appendChild(petal);
+            }
+        }
+
+        // Khởi chạy ứng dụng khi trang tải xong
+        window.onload = initApp;
+    </script>
+</body>
+</html>
